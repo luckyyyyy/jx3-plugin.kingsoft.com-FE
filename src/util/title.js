@@ -1,4 +1,3 @@
-import { GLOBAL_TITLE } from '@/config';
 
 function getTitle(vm) {
   const { title } = vm.$options;

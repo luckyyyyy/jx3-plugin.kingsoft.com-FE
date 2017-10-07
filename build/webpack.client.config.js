@@ -4,15 +4,11 @@ const merge = require('webpack-merge')
 const base = require('./webpack.base.config')
 const SWPrecachePlugin = require('sw-precache-webpack-plugin')
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = merge(base, {
   entry: {
     app: './src/entry/client.js'
-  },
-  resolve: {
-    alias: {
-      'create-api': './create-api-client.js'
-    }
   },
   plugins: [
     // strip dev-only code in Vue source
@@ -44,6 +40,9 @@ const config = merge(base, {
 
 if (process.env.NODE_ENV === 'production') {
   config.plugins.push(
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+    }),
     // auto generate service worker
     new SWPrecachePlugin({
       cacheId: 'chaping-vue',

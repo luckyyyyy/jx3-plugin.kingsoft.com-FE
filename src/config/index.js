@@ -1,5 +1,4 @@
 import { isDevelop, isClient } from '@/util';
-import env from '@/config/env.json';
 
 export const GLOBAL_TITLE = '差评';
 export const BASE_URL = (() => {
@@ -7,9 +6,8 @@ export const BASE_URL = (() => {
     if (isClient()) {
       return `${window.location.origin}/api`;
     }
-    return env.dev.baseUrl;
+    return 'http://localhost:9999/api';
   }
-  return env.prod.baseUrl;
+  return 'https://jx3-plugin.kingsoft.com/api';
 })();
-export const AUTH_URL = '/login'
 export const ROUTER_BASE = '';

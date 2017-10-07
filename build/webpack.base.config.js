@@ -3,7 +3,6 @@ const webpack = require('webpack')
 const vueConfig = require('./vue-loader.config')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -103,14 +102,11 @@ const baseConfig = {
     ]
   },
   performance: {
-    maxEntrypointSize: 300000,
+    maxEntrypointSize: 500000,
     hints: isProd ? 'warning' : false
   },
   plugins: isProd
     ? [
-        new BundleAnalyzerPlugin({
-          analyzerMode: 'static',
-        }),
         new webpack.optimize.ModuleConcatenationPlugin(),
         new webpack.optimize.UglifyJsPlugin({
           compress: { warnings: false }

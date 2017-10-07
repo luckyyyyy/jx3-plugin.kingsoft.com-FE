@@ -19,25 +19,23 @@ import App from '@/App';
 import { createStore } from '@/store';
 import { createRouter } from '@/router';
 import titleMixin from '@/util/title';
-// import 'vuetify/src/stylus/app.styl';
 
-
- Vue.use(Vuetify, {
-  components: {
-    VApp,
-    VBtn,
-    VForm,
-    VTabs,
-    VGrid,
-    VTextField,
-    VChip,
-    VSelect,
-    VCheckbox,
-    VCard,
-    VRadioGroup,
-    VSubheader,
-  }
- })
+Vue.use(Vuetify, {
+ components: {
+   VApp,
+   VBtn,
+   VForm,
+   VTabs,
+   VGrid,
+   VTextField,
+   VChip,
+   VSelect,
+   VCheckbox,
+   VCard,
+   VRadioGroup,
+   VSubheader,
+ }
+})
 
 Vue.mixin(titleMixin);
 
