@@ -1,0 +1,38 @@
+{
+  "presets": [
+    // "stage-3",
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [ "last 2 versions" ],
+          "node": "current"
+        }
+      }
+    ]
+  ],
+
+  "plugins": [
+    "transform-object-rest-spread",
+    "syntax-dynamic-import",
+    "transform-vue-jsx",
+    ["transform-imports", {
+      "vuetify": {
+        "transform": "vuetify/es5/components/${member}",
+        "preventFullImport": true
+      }
+    }],
+    ["transform-runtime", {
+        "polyfill": false,
+        "regenerator": true
+    }],
+    ["component", [
+      {
+        "libraryName": "element-ui",
+        "styleLibraryName": "theme-default"
+      }
+    ]]
+  ]
+
+  // "comments": false,
+}
