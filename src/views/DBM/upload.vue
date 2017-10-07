@@ -87,7 +87,7 @@
 <script>
 import { mapActions, mapState } from 'vuex';
 import MarkdownIt from 'markdown-it';
-import { edit, upload } from '@/store/api/DBM';
+import { edit, upload } from '@/api/DBM';
 
 const md = new MarkdownIt();
 export default {

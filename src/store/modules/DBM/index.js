@@ -1,4 +1,4 @@
-import * as api from '@/store/api/DBM';
+import * as api from '@/api/DBM';
 
 export default {
   namespaced: true,

@@ -1,6 +1,5 @@
 import { isDevelop, isClient } from '@/util';
 
-export const GLOBAL_TITLE = '差评';
 export const BASE_URL = (() => {
   if (isDevelop()) {
     if (isClient()) {

@@ -13,7 +13,7 @@ import {
   VCard,
   VRadioGroup,
   VSubheader,
- } from 'vuetify';
+} from 'vuetify';
 import { sync } from 'vuex-router-sync';
 import App from '@/App';
 import { createStore } from '@/store';
@@ -21,24 +21,23 @@ import { createRouter } from '@/router';
 import titleMixin from '@/util/title';
 
 Vue.use(Vuetify, {
- components: {
-   VApp,
-   VBtn,
-   VForm,
-   VTabs,
-   VGrid,
-   VTextField,
-   VChip,
-   VSelect,
-   VCheckbox,
-   VCard,
-   VRadioGroup,
-   VSubheader,
- }
+  components: {
+    VApp,
+    VBtn,
+    VForm,
+    VTabs,
+    VGrid,
+    VTextField,
+    VChip,
+    VSelect,
+    VCheckbox,
+    VCard,
+    VRadioGroup,
+    VSubheader,
+  }
 })
 
 Vue.mixin(titleMixin);
-
 
 export default function createApp() {
   const store = createStore();

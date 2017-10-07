@@ -1,4 +1,4 @@
-import * as api from '@/store/api/file';
+import * as api from '@/api/file';
 
 export default {
   namespaced: true,

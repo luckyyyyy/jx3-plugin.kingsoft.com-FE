@@ -28,9 +28,12 @@
 <script>
 import { mapActions, mapState } from 'vuex';
 import MarkdownIt from 'markdown-it';
+import { dbmMixin } from '@/util/mixin';
+
 const md = new MarkdownIt();
 
 export default {
+  mixins: [dbmMixin],
   asyncData({ store, route }) {
     return store.dispatch('file/GET_FILE', route.params.id);
   },
@@ -41,14 +44,6 @@ export default {
       return md.render(this.file.message);
     },
   },
-  methods: {
-    down(id, type) {
-      window.open(`/api/dbm/file/down/${id}?type=${type}`)
-    },
-    edit(id) {
-      this.$router.push({ name: 'DBM_upload', params: { id }});
-    }
-  }
 };
 </script>
 

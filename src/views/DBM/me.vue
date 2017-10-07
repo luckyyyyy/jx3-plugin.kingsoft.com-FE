@@ -1,7 +1,7 @@
 <template>
   <v-layout column class="white lighten-4 elevation-0">
     <div class="card-title">我的数据</div>
-    <el-table class="f-cp" :data="list" @row-click="to" style="width: 100%">
+    <el-table class="f-cp" :data="list" @row-click="rowClick" style="width: 100%">
       <el-table-column prop="fid" label="ID" width="60"></el-table-column>
       <el-table-column prop="user.username" label="作者" width="120"></el-table-column>
       <el-table-column label="标题">
@@ -29,7 +29,10 @@
 <script>
 import { mapState } from 'vuex';
 import { Tag, Table, TableColumn } from 'element-ui';
+import { dbmMixin } from '@/util/mixin';
+
 export default {
+  mixins: [dbmMixin],
   components: {
     [Tag.name]: Tag,
     [Table.name]: Table,
@@ -40,17 +43,6 @@ export default {
   },
   computed: {
     ...mapState('file', ['list']),
-  },
-  methods: {
-    down(id, type) {
-      window.open(`/api/dbm/file/down/${id}?type=${type}`)
-    },
-    to(row, event, column) {
-      this.$router.push({ name: 'DBM_detail', params: { id: row.fid } });
-    },
-    edit(id) {
-      this.$router.push({ name: 'DBM_upload', params: { id }});
-    }
   },
 };
 </script>

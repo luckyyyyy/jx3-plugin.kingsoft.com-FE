@@ -1,6 +1,6 @@
 import createApp from '@/entry/main';
-import { setUserCookie } from '@/store/api';
-import { ROUTER_BASE, BASE_URL, AUTH_URL } from '@/config';
+import { setUserCookie } from '@/api';
+import { ROUTER_BASE, BASE_URL } from '@/config';
 
 export default (context) => {
   return new Promise(async (resolve, reject) => {
@@ -25,7 +25,7 @@ export default (context) => {
     const { route } = router.resolve(url);
     const requiresAuth = route.matched.some(record => record.meta.requiresAuth);
     if (!user && requiresAuth) {
-      return reject({ url: `${AUTH_URL}?redirect_uri=${encodeURIComponent(context.url)}` });
+      return reject({ url: `/login?redirect_uri=${encodeURIComponent(context.url)}` });
     }
     router.push(url);
     return router.onReady(() => {

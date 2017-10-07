@@ -11,14 +11,6 @@ Vue.prototype.$bar = new Vue(ProgressBar).$mount();
 const bar = Vue.prototype.$bar;
 document.body.appendChild(bar.$el);
 
-// 横竖屏方案
-// window.addEventListener('orientationchange', () => {
-//   const orientation = window.orientation;
-//   if (orientation === 90 || orientation === -90) {
-//     alert('111');
-//   }
-// });
-
 Vue.mixin({
   beforeRouteUpdate(to, from, next) {
     const { asyncData } = this.$options;
@@ -32,6 +24,7 @@ Vue.mixin({
     }
   },
   // 客户端下先放行view方案
+  // asyncData 请求不再由服务端代理 可以缓解压力 但是需要修改代码添加一些占位符
   // beforeMount () {
   //   const { asyncData } = this.$options;
   //   if (asyncData) {

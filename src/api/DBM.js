@@ -1,4 +1,4 @@
-import { http } from '@/store/api';
+import { http } from '@/api';
 
 export const check = data => http.post('dbm/check', { data });
 export const upload = data => http.post('dbm/upload', { data });
