@@ -2,7 +2,7 @@
   <v-layout column class="white lighten-4 elevation-0">
     <div class="card-title">我的数据</div>
     <el-table class="f-cp" :data="list" @row-click="rowClick" style="width: 100%">
-      <el-table-column prop="fid" label="ID" width="60"></el-table-column>
+      <el-table-column prop="fid" label="ID" width="80"></el-table-column>
       <el-table-column prop="user.username" label="作者" width="120"></el-table-column>
       <el-table-column label="标题">
         <template scope="scope">
@@ -14,7 +14,7 @@
         </template>
       </el-table-column>
       <el-table-column prop="update_time" label="更新时间" width="160"></el-table-column>
-      <el-table-column prop="downloads" label="下载次数" width="180"></el-table-column>
+      <el-table-column prop="downloads" label="下载次数" width="100"></el-table-column>
       <el-table-column label="操作" width="280">
         <template scope="scope">
           <v-btn small color="success" @click.stop="edit(scope.row.fid)">编辑</v-btn>
