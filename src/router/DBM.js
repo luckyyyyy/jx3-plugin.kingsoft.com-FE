@@ -15,13 +15,13 @@ export default [
         component: () => import('@/views/DBM/me.vue'),
       },
       {
-        path: 'upload/:id(\\w+)?',
+        path: 'upload/:id(\\d+)?',
         meta: { requiresAuth: true },
         name: 'DBM_upload',
         component: () => import('@/views/DBM/upload.vue'),
       },
       {
-        path: ':id(\\w+)',
+        path: ':id(\\d+)',
         meta: { name: '数据详情' },
         name: 'DBM_detail',
         component: () => import('@/views/DBM/detail.vue'),
