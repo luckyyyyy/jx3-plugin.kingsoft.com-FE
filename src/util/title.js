@@ -16,7 +16,7 @@ const serverTitleMixin = {
 };
 
 const clientTitleMixin = {
-  mounted() {
+  created() {
     const title = getTitle(this);
     if (title) {
       document.title = title;

@@ -99,6 +99,7 @@ export default {
       return Promise.resolve();
     }
   },
+  title: '《剑网3》DBM数据上传与下载 - 上传数据',
   created() {
     const id = this.$route.params.id;
     if (id) {

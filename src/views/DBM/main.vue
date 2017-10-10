@@ -25,6 +25,7 @@ export default {
       ],
     };
   },
+  title: '《剑网3》DBM数据上传与下载',
   computed: {
     bgcolor() {
         const tab = this.tab.find((item) => {

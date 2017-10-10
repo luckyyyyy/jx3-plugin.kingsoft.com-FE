@@ -13,3 +13,8 @@
   height: 600px;
 }
 </style>
+<script>
+export default {
+  title: '《剑网3》插件服务中心',
+}
+</script>

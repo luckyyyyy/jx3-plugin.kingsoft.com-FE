@@ -11,11 +11,6 @@
   </v-app>
 </template>
 
-<script>
-export default {
-  title : '《剑网3》DBM数据上传' // 懒得改
-}
-</script>
 
 <style lang="stylus">
   @import '~vuetify/src/stylus/app.styl'

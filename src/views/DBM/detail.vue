@@ -34,6 +34,9 @@ const md = new MarkdownIt();
 
 export default {
   mixins: [dbmMixin],
+  title() {
+    return `DBM数据 - ${this.file.title}`;
+  },
   asyncData({ store, route }) {
     return store.dispatch('file/GET_FILE', route.params.id);
   },
